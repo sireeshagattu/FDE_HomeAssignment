@@ -1,0 +1,14 @@
+import requests
+
+url = "https://jsonplaceholder.typicode.com/users"
+response = requests.get(url)
+print(response.json())
+
+users = response.json()
+
+for user in users:
+    name = user["name"]
+    email = user["email"]
+    company = user["company"]["name"]
+    print(f"Name: {name}, Email: {email}, Company: {company}")
+
